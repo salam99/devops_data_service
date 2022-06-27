@@ -1,7 +1,7 @@
 pipeline {
     agent any 
 
-    tools {nodejs "npm"}
+    tools {npm "nodejs"}
 
     environment {
         registryCredential = 'dockerhub'
