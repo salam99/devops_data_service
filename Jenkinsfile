@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo 'Retrieve source from github. run npm install and npm test' 
                 git branch: 'main',
-                    url: 'https://github.com/Zinny/devops_data_svc.git'
+                    url: 'https://github.com/salam99/devops_data_service.git'
                 echo 'repo files'
                 sh 'ls -a'
                 echo 'install dependencies'
