@@ -5,7 +5,7 @@ pipeline {
 
     environment {
         registryCredential = 'dockerhub'
-        imageName = 'cinnyabraham06/internalapp'
+        imageName = 'salam9920/internal'
         dockerImage = ''
         }
     stages {
