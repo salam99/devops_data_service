@@ -1,7 +1,7 @@
 pipeline {
     agent any 
 
-    tools {nodejs "nodejs"}
+    tools {nodejs "npm"}
 
     environment {
         registryCredential = 'dockerhub'
@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Run the tests') {
              agent {
-                docker { 
+                any { 
                     image 'node:14-alpine'
                     args '-e HOME=/tmp -e NPM_CONFIG_PREFIX=/tmp/.npm'
                     reuseNode true
@@ -73,7 +73,7 @@ pipeline {
         }     
          stage('deploy to k8s') {
              agent {
-                docker { 
+                any { 
                     image 'google/cloud-sdk:latest'
                     args '-e HOME=/tmp'
                     reuseNode true
